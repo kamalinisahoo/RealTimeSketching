@@ -21,7 +21,6 @@ let mousedown = false;
 
 //API
 
-
 let tool = canvas.getContext("2d");
 
 tool.strokeStyle = "blue";
@@ -58,7 +57,6 @@ canvas.addEventListener("mousemove", (e) => {
 
    
 })
-
 
 canvas.addEventListener("mouseup", (e) =>
 {
@@ -106,11 +104,11 @@ function undoRedoCanvas(trackObj)
 
 }
 
-
 function beginPath(strokeObj)
 {
     tool.beginPath();
     tool.moveTo(strokeObj.x, strokeObj.y);
+    console.logging("here");
 }
 
 function drawStroke(strokeObj)
@@ -139,7 +137,7 @@ pencilWidthElem.addEventListener("change", (e) => {
 eraserWidthElem.addEventListener("change", (e) => {
 
     eraserWidth = eraserWidthElem.value;
-    tool.lineWidth = eraserWiidth;
+    tool.lineWidth = eraserWidth;
 })
 
 eraser.addEventListener("click", (e) => {
@@ -155,7 +153,6 @@ eraser.addEventListener("click", (e) => {
 })
 
 
-
 download.addEventListener("click", (e) =>
 {
     let url = canvas.toDataURL();
@@ -166,13 +163,11 @@ download.addEventListener("click", (e) =>
     a.click();
 })
 
-
 socket.on("beginPath", (data) => {
     //dta from server 
     beginPath(data);
 
 })
-
 
 socket.on("drawStroke", (data) => {
 
