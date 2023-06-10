@@ -138,7 +138,7 @@ pencilWidthElem.addEventListener("change", (e) => {
 
 eraserWidthElem.addEventListener("change", (e) => {
 
-    eraserWiidth = eraserWidthElem.value;
+    eraserWidth = eraserWidthElem.value;
     tool.lineWidth = eraserWiidth;
 })
 
