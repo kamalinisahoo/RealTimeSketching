@@ -26,4 +26,8 @@ io.on("connection", (socket) => {
     socket.on("redoUndo", (data) => {
         io.sockets.emit("redoUndo", data);
     })
+
+    socket.on("disconnect", () => {
+        console.log("Socket disconnected");
+    });
 })
